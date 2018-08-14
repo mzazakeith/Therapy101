@@ -1,0 +1,42 @@
+{%extends "registration/base.html"%}
+{% load bootstrap4 %}
+
+{% block content %}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-7">
+
+            </div>
+
+            <div class="col-md-5 login">
+
+                <div class="card card-default">
+
+                    <div class="card-heading">
+                        <h1 class="text-left login-text"><strong> &nbsp; Sign In</strong></h1>
+                    </div>
+                    <div class="card-body">
+
+                        <form  action="/accounts/login/" method="post">
+                            {% csrf_token %}
+                            {% bootstrap_form form%}
+
+                            <div class="form-group">
+                                <input type="submit" class="ui button" value="Login">
+                            </div>
+
+                            <input type="hidden" name="next" value="/home">
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
