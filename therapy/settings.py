@@ -81,6 +81,8 @@ WSGI_APPLICATION = 'therapy.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
+
+# mzaza
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -89,6 +91,41 @@ DATABASES = {
         'PASSWORD': 'password',
     }
 }
+# end mzaza
+
+# zawadi
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'therapytest',
+#         'USER': 'ashley',
+#         'PASSWORD': 'sherlocked',
+#     }
+# }
+# endzawadi
+
+
+# paulette
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'therapytest',
+#         'USER': 'paulette',
+#         'PASSWORD': '1234',
+#     }
+# }
+# endpaulette
+
+# david
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'therapytest',
+#         'USER': 'midik',
+#         'PASSWORD': '12345',
+#     }
+# }
+# end david
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

@@ -12,8 +12,7 @@ def slt_signup(request):
         if form.is_valid():
             user = form.save(commit=False)
             user.is_active = True
-            user.is_student = True
-            user.is_teacher = False
+            user.is_slt = True
             user.save()
             return redirect("/")
     else:
@@ -27,8 +26,7 @@ def slta_signup(request):
         if form.is_valid():
             user = form.save(commit=False)
             user.is_active = True
-            user.is_student = True
-            user.is_teacher = False
+            user.is_slta = True
             user.save()
             return redirect("/")
     else:
@@ -42,8 +40,7 @@ def parent_signup(request):
         if form.is_valid():
             user = form.save(commit=False)
             user.is_active = True
-            user.is_student = True
-            user.is_teacher = False
+            user.is_parent = True
             user.save()
             return redirect("/")
     else:
