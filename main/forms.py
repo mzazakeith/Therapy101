@@ -1,3 +1,4 @@
+
 from django import forms
 
 from main.models import Curriculum, TreatmentPlan
@@ -13,3 +14,13 @@ class TreatmentPlanForm(forms.ModelForm):
     class Meta:
         model = TreatmentPlan
         fields = ('description', 'document', )
+
+
+from .models import PatientProfile
+
+
+class NewProfileForm(forms.ModelForm):
+    class Meta:
+        model = PatientProfile
+        exclude = ['user']
+
