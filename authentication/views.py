@@ -14,7 +14,7 @@ def slt_signup(request):
             user.is_active = True
             user.is_slt = True
             user.save()
-            return redirect("/")
+            return redirect('/new/profile')
     else:
         form = SLTSignupForm()
     return render(request, 'registration/slt_signup.html', {'form': form})
@@ -28,7 +28,7 @@ def slta_signup(request):
             user.is_active = True
             user.is_slta = True
             user.save()
-            return redirect("/")
+            return redirect("/new/profile")
     else:
         form = SLTASignupForm()
     return render(request, 'registration/slta_signup.html', {'form': form})
@@ -42,7 +42,7 @@ def parent_signup(request):
             user.is_active = True
             user.is_parent = True
             user.save()
-            return redirect("/")
+            return redirect("/new/profile")
     else:
         form = ParentSignupForm()
     return render(request, 'registration/parent_signup.html', {'form': form})

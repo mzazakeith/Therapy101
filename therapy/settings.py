@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main',
 ]
 
 MIDDLEWARE = [
@@ -90,8 +89,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'therapytest',
-        'USER': 'midik',
-        'PASSWORD': '12345',
+        'USER': 'mzaza',
+        'PASSWORD': 'password',
     }
 }
 # end mzaza
@@ -173,5 +172,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 AUTH_USER_MODEL = "authentication.User"
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
