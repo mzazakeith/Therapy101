@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'main',
     'bootstrap4',
     'authentication',
@@ -77,22 +78,22 @@ WSGI_APPLICATION = 'therapy.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
-# mzaza
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'therapytest',
-        'USER': 'mzaza',
-        'PASSWORD': 'password',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# mzaza
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'therapytest',
+#         'USER': 'mzaza',
+#         'PASSWORD': 'password',
+#     }
+# }
 # end mzaza
 
 # zawadi
@@ -172,4 +173,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 AUTH_USER_MODEL = "authentication.User"
 
-
+#
+# MPESA_BUY_USER = "put_your_buy_goods_user_here"
+# MPESA_BUY_PASS = "put_your_buy_goods_password_here"
+# MPESA_PAYBILL_USER = "put_your_paybill_user_here"
+# MPESA_PAYBILL_PASS = "put_paybill_password_here"
