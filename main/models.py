@@ -2,7 +2,7 @@
 from django.db import models
 
 # Create your models here.
-from Therapy101.authentication.models import User
+from authentication.models import User
 
 
 class PatientProfile(models.Model):
