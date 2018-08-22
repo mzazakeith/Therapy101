@@ -1,0 +1,14 @@
+CREATE DATABASE database_name; # From the $USER database.
+
+CREATE TABLE table_name (id serial PRIMARY KEY, some_column varchar, another_column int);
+ALTER TABLE table_name ADD column_name boolean;
+
+ALTER TABLE table_name DROP column_name;
+
+
+SELECT * FROM table_name WHERE id >= 3;
+SELECT * FROM contacts WHERE NOT id >= 5;
+
+UPDATE courses SET name = 'Poetry' WHERE id = 2;
+DROP TABLE table_name; # From the database that holds the table.
+DROP DATABASE test_database; # From the $USER database.
