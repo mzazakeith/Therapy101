@@ -24,3 +24,4 @@ class AssistantProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = AssistantProfile
         exclude = ['user']
+
