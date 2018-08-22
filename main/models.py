@@ -1,7 +1,10 @@
-
 from django.db import models
 
 from authentication.models import User
+
+from djgeojson.fields import PointField, PolygonField
+
+from django.db import models
 
 
 class Curriculum(models.Model):
@@ -24,7 +27,6 @@ class PatientProfile(models.Model):
     bio = models.TextField(max_length=200, blank=True)
     email = models.CharField(max_length=100, null=True, blank=True)
 
-
     def __str__(self):
         return self.user.username
 
@@ -38,3 +40,11 @@ class AssistantProfile(models.Model):
     def __str__(self):
         return self.user.username
 
+
+class SLTASpot(models.Model):
+    geom = PointField()
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    @property
+    def popupContent(self):
+        return '<a href={}/{}><p>{}</p></a>'.format("userprofile",self.user.id, self.user.username)
