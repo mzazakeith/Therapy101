@@ -6,6 +6,11 @@ from rest_framework.urlpatterns import format_suffix_patterns
 from main import views
 
 urlpatterns = [
+    url(r'^sltdash/$', views.therapist_dash, name='sltda'),
+    url(r'^patient/$', views.patient, name='patient'),
+    url(r'^curriculums/$', views.curriculumlist, name='curriculums'),
+    url(r'^plans/$', views.planlist, name='plans'),
+    url(r'^assistants/$', views.assistantlist, name='assistants'),
     url(r'^upload/curriculum/$', views.curriculum_upload, name='upload-curriculum'),
     url(r'^upload/treatment/$', views.treatment_upload, name='upload-treatment'),
     url(r'^$', views.welcome, name='welcome'),
@@ -18,6 +23,7 @@ urlpatterns = [
     url(r'^patients/(?P<pk>[0-9]+)/$', views.PatientProfileDetail.as_view()),
     url(r'^assistants/$', views.AssistantProfileList.as_view()),
     url(r'^assistants/(?P<pk>[0-9]+)/$', views.AssistantProfileDetail.as_view()),
+
 ]
 
 if settings.DEBUG:

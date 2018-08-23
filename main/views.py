@@ -50,6 +50,8 @@ def welcome(request):
     return render(request, 'welcome.html', locals())
 
 
+
+
 class CurriculumList(APIView):
     def get(self, request, format=None):
         curriculums = Curriculum.objects.all()
@@ -128,3 +130,19 @@ class AssistantProfileDetail(APIView):
         assistantprofile = self.get_object(pk)
         serializer = AssistantProfileSerializer(assistantprofile)
         return Response(serializer.data)
+
+def therapist_dash(request):
+    return render (request, 'therapistdash/therapist-dash.html' )
+
+def patient(request):
+    return render (request, 'therapistdash/patient.html' )
+
+def curriculumlist(request):
+    return render (request, 'therapistdash/curriculums.html' )
+
+
+def planlist(request):
+    return render (request, 'therapistdash/planlist.html' )
+
+def assistantlist(request):
+    return render (request, 'therapistdash/assistantlist.html' )
