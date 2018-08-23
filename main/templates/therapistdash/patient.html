@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block content %} 
+{{ block.super}}
+<div class="container">
+        <div class="patient">
+    
+                <h4>Name: {{patient.name}}</h4>
+                <h4>Age: {{patient.age}}</h4>
+                <h4>Diagnosis: {{patient.diagnosis}}</h4>
+                <h4>Guardian: {{patient.guardian}}</h4>
+                <h4>SLTA: {{patient.slta}}</h4>
+                
+                <h3>Treatment Plan</h3>
+                <button>Download File</button>
+            
+                <h3>Cirriculum</h3>
+                <button>Download File</button>
+            
+            
+            
+            </div>
+</div>
+
+
+
+
+
+{% endblock %}

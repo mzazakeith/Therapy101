@@ -95,25 +95,25 @@ WSGI_APPLICATION = 'therapy.wsgi.application'
 # }
 
 # mzaza
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'therapytest',
-        'USER': 'mzaza',
-        'PASSWORD': 'password',
-    }
-}
-# end mzaza
-
-# zawadi
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
 #         'NAME': 'therapytest',
-#         'USER': 'ashley',
-#         'PASSWORD': 'sherlocked',
+#         'USER': 'mzaza',
+#         'PASSWORD': 'password',
 #     }
 # }
+# end mzaza
+
+# zawadi
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'therapytest',
+        'USER': 'ashley',
+        'PASSWORD': 'sherlocked',
+    }
+}
 # endzawadi
 
 
@@ -176,6 +176,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
