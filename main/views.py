@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from main.forms import CurriculumForm, TreatmentPlanForm, NewProfileForm
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from main.models import Curriculum, TreatmentPlan, PatientProfile, AssistantProfile
+from main.models import Curriculum, TreatmentPlan, PatientProfile, AssistantProfile, SLTASpot
 from main.serializers import CurriculumSerializer, TreatmentPlanSerializer, PatientProfileSerializer, \
     AssistantProfileSerializer
 
@@ -47,6 +47,7 @@ def new_profile(request):
 
 def welcome(request):
     title = "welcome"
+    locations =SLTASpot.objects.all()
     return render(request, 'welcome.html', locals())
 
 
