@@ -1,31 +1,7 @@
-<<<<<<< HEAD
-=======
 {% extends "base.html" %}
-{% load leaflet_tags %}
-{% load geojson_tags %}
 
 {% block content %}
 
-    {% block extra_assets %}
-        {% leaflet_css %}
-        {% leaflet_js %}
-    {% endblock %}
-
-
-    <script type="text/javascript">
-        var collection = {{ locations|geojsonfeature:"popupContent"|safe }};
-
-        function onEachFeature(feature, layer) {
-            if (feature.properties && feature.properties.popupContent) {
-                layer.bindPopup(feature.properties.popupContent);
-            }
-        }
-
-        function map_init(map, options) {
-            L.geoJson(collection, {onEachFeature: onEachFeature}).addTo(map);
-        }
-    </script>
-    {% leaflet_map "sltas" callback="window.map_init" %}
 
 {% endblock %}
->>>>>>> bf71959150927d2d3a7344b66d4673bd315e4a67
+
