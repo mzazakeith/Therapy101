@@ -7,6 +7,7 @@ from main import views
 
 urlpatterns = [
     url(r'^sltdash/$', views.therapist_dash, name='sltda'),
+    url(r'^sltadash/$', views.assistant_dash, name='sltadash'),
     url(r'^patients/$', views.patientlist, name='patientlist'),
     url(r'^patient/(?P<ownerpatient>\d+)$', views.patient, name='patient'),
     url(r'^curriculums/$', views.curriculumlist, name='curriculums'),

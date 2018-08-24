@@ -139,7 +139,7 @@ def therapist_dash(request):
 def patient(request, ownerpatient):
     patient = PatientProfile.objects.get(id=ownerpatient)
     import datetime
-    age=int((datetime.date.today() - patient.birthday).days / 365.25)
+    age = int((datetime.date.today() - patient.birthday).days / 365.25)
     return render(request, 'therapistdash/patient.html', locals())
 
 
@@ -161,3 +161,7 @@ def patientlist(request):
     current_user = request.user
     patients = PatientProfile.objects.filter(slt=current_user)
     return render(request, 'therapistdash/patientlist.html', locals())
+
+
+def assistant_dash(request):
+    return render(request, 'therapistdash/assistantdash.html')
