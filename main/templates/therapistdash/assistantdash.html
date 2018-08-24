@@ -1,0 +1,84 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block content %}
+    {{ block.super}}
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <!-- navigation -->
+            <div class="col-md-3">
+                <div class="sidenav">
+
+                    <a href="/sltadash"> <i class="material-icons">dashboard</i> DASHBOARD</a>
+                    <!-- <a href="#about"> <i class="material-icons">assistant</i></i>SLTAs </a> -->
+                    <a href="{% url 'patientlist' %}"> <i class="material-icons">person</i> PATIENTS</a>
+                    <a href="#clients"> <i class="material-icons">description</i>TREATMENT PLANS</a>
+                    <a href="{% url 'curriculums' %}">  <i class="material-icons">receipt</i>CURRICULUM</a>
+                    <a href="#contact"> <i class="material-icons">reorder</i>REPORTS</a>
+                    <a href="/logout">LOGOUT</a>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <!-- main-body -->
+                <div class="main">
+                     <h2>Welcome {{ request.user.username | capfirst}}</h2>
+                    <div class="col-md-4">
+                        <!-- trtment plan cards -->
+                        <a href="{% url 'upload-curriculum' %}">
+                            <div class="card">
+                                <div id="createplans" class="card-body">
+                                    <i class="material-icons">add</i>
+                                    <h3>CREATE CURRICULUM</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- patient card -->
+                        <a href="{% url 'patientlist' %}">
+                            <div class="card">
+                                <div id="patients" class="card-body">
+                                    <i class="material-icons">person</i>
+                                    <h3>PATIENTS</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- cirriculum card -->
+                        <a href="{% url 'curriculums' %}">
+                            <div class="card">
+                                <div id="curriculum" class="card-body">
+                                    <i class="material-icons">description</i>
+                                    <h3>CURRICULUM</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="cold">
+                        <div class="col-md-6">
+                            <!-- notifications card -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <i class="material-icons">notifications</i>
+                                    <h3>NOTIFICATIONS</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <!-- sltas card -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <i class="material-icons">reorder</i>
+                                    <h3>REPORTS</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
