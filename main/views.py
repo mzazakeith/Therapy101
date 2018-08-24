@@ -47,10 +47,8 @@ def new_profile(request):
 
 def welcome(request):
     title = "welcome"
-    locations =SLTASpot.objects.all()
+    locations = SLTASpot.objects.all()
     return render(request, 'welcome.html', locals())
-
-
 
 
 class CurriculumList(APIView):
@@ -132,18 +130,34 @@ class AssistantProfileDetail(APIView):
         serializer = AssistantProfileSerializer(assistantprofile)
         return Response(serializer.data)
 
-def therapist_dash(request):
-    return render (request, 'therapistdash/therapist-dash.html' )
 
-def patient(request):
-    return render (request, 'therapistdash/patient.html' )
+def therapist_dash(request):
+    locations = SLTASpot.objects.all()
+    return render(request, 'therapistdash/therapist-dash.html', locals())
+
+
+def patient(request, ownerpatient):
+    patient = PatientProfile.objects.get(id=ownerpatient)
+    import datetime
+    age=int((datetime.date.today() - patient.birthday).days / 365.25)
+    return render(request, 'therapistdash/patient.html', locals())
+
 
 def curriculumlist(request):
-    return render (request, 'therapistdash/curriculums.html' )
+    current_user = request.user
+    curriculums = Curriculum.objects.filter(doctor=current_user)
+    return render(request, 'therapistdash/curriculums.html', locals())
 
 
 def planlist(request):
-    return render (request, 'therapistdash/planlist.html' )
+    return render(request, 'therapistdash/planlist.html')
+
 
 def assistantlist(request):
-    return render (request, 'therapistdash/assistantlist.html' )
+    return render(request, 'therapistdash/assistantlist.html')
+
+
+def patientlist(request):
+    current_user = request.user
+    patients = PatientProfile.objects.filter(slt=current_user)
+    return render(request, 'therapistdash/patientlist.html', locals())
