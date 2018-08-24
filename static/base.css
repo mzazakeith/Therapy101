@@ -112,3 +112,18 @@ td, th {
 tr:nth-child(even) {
     background-color: rgba(251,251,251,0.3);
 }
+
+/*modal*/
+
+.modal-backdrop.in{
+    display: none!important;
+}
+
+.maps p {
+    color: black;
+    text-decoration: none;
+
+}
+.modal-content{
+    min-width: 100vh!important;
+}
