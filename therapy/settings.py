@@ -95,25 +95,25 @@ WSGI_APPLICATION = 'therapy.wsgi.application'
 # }
 
 # mzaza
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'therapytest',
-#         'USER': 'mzaza',
-#         'PASSWORD': 'password',
-#     }
-# }
-# end mzaza
-
-# zawadi
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'therapytest',
-        'USER': 'ashley',
-        'PASSWORD': 'sherlocked',
+        'USER': 'mzaza',
+        'PASSWORD': 'password',
     }
 }
+# end mzaza
+
+# zawadi
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'therapytest',
+#         'USER': 'ashley',
+#         'PASSWORD': 'sherlocked',
+#     }
+# }
 # endzawadi
 
 
@@ -163,7 +163,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Nairobi'
 
 USE_I18N = True
 
@@ -187,6 +187,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 AUTH_USER_MODEL = "authentication.User"
 
 LEAFLET_CONFIG = {
-    'DEFAULT_CENTER': (0.0236, 37.9062),
-    'DEFAULT_ZOOM': 6,
+    'DEFAULT_CENTER': (2.0236, 30.9062),
+    'DEFAULT_ZOOM': 5,
 }
