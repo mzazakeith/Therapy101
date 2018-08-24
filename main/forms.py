@@ -7,13 +7,13 @@ from leaflet.forms.fields import PointField
 class CurriculumForm(forms.ModelForm):
     class Meta:
         model = Curriculum
-        fields = ('description', 'document',)
+        exclude = ['uploaded_at', 'patient','doctor']
 
 
 class TreatmentPlanForm(forms.ModelForm):
     class Meta:
         model = TreatmentPlan
-        fields = ('description', 'document',)
+        exclude = ['uploaded_at', 'patient']
 
 
 from .models import PatientProfile
