@@ -145,7 +145,10 @@ def patient(request, ownerpatient):
 
 def curriculumlist(request):
     current_user = request.user
-    curriculums = Curriculum.objects.filter(doctor=current_user)
+    if current_user.is_slt:
+        curriculums = Curriculum.objects.all()
+    else:
+        curriculums = Curriculum.objects.filter(doctor=current_user)
     return render(request, 'therapistdash/curriculums.html', locals())
 
 
@@ -159,9 +162,26 @@ def assistantlist(request):
 
 def patientlist(request):
     current_user = request.user
-    patients = PatientProfile.objects.filter(slt=current_user)
+    if current_user.is_slt:
+        patients = PatientProfile.objects.filter(slt=current_user)
+    else:
+        profile = AssistantProfile.objects.get(user=current_user)
+        patients = PatientProfile.objects.filter(slta=profile)
     return render(request, 'therapistdash/patientlist.html', locals())
 
 
 def assistant_dash(request):
     return render(request, 'therapistdash/assistantdash.html')
+
+
+def assistant(request, user_id):
+    assistant = AssistantProfile.objects.get(user=user_id)
+    profile = AssistantProfile.objects.get(user=user_id)
+    patients = PatientProfile.objects.filter(slta=profile)
+    return render(request, 'therapistdash/assistant.html', locals())
+
+
+def assistantpatients(request, user_id):
+    profile = AssistantProfile.objects.get(user=user_id)
+    patients = PatientProfile.objects.filter(slta=profile)
+    return render(request, 'therapistdash/assistantspatients.html', locals())

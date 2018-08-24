@@ -23,21 +23,22 @@
                     <a href="#contact"> <i class="material-icons">reorder</i>REPORTS</a>
                     <a href="/logout">LOGOUT</a>
 
-
                 </div>
             </div>
             <div class="col-md-9">
                 <!-- main-body -->
                 <div class="main">
-                    <h2>Sidebar</h2>
+                    <h2>Welcome {{ request.user.username | capfirst}}</h2>
                     <div class="col-md-3">
                         <!-- trtment plan cards -->
-                        <div class="card">
-                            <div id="createplans" class="card-body">
-                                <i class="material-icons">add</i>
-                                <h3>CREATE PLANS</h3>
+                        <a href="{% url 'upload-treatment' %}">
+                            <div class="card">
+                                <div id="createplans" class="card-body">
+                                    <i class="material-icons">add</i>
+                                    <h3>CREATE PLANS</h3>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="col-md-3">
                         <!-- patient card -->
@@ -101,7 +102,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">AVAILABLE ASSISTANTS</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

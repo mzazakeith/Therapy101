@@ -26,7 +26,6 @@ class AssistantProfile(models.Model):
     profile_photo = models.ImageField(upload_to='profile_pictures/')
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     location = models.CharField(max_length=255, blank=True)
-    email = models.CharField(max_length=100, null=True, blank=True)
 
     def __str__(self):
         return self.user.username

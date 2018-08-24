@@ -187,6 +187,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 AUTH_USER_MODEL = "authentication.User"
 
 LEAFLET_CONFIG = {
-    'DEFAULT_CENTER': (2.0236, 30.9062),
-    'DEFAULT_ZOOM': 5,
+    'DEFAULT_CENTER': (0.0236, 37.9062),
+    'DEFAULT_ZOOM': 6,
 }
