@@ -11,7 +11,7 @@
                 <div class="col-md-6">
                     <h4>Name: {{assistant.user.username}}</h4>
                     <h4>Location: {{assistant.location}}</h4>
-                    <h4>Patients: <a href="{% url 'slta-patients' user_id=assistant.user_id  %}">{{patients|length}}</a></h4>
+                    <h4>Patients: <a style="color: white;" href="{% url 'slta-patients' user_id=assistant.user_id  %}">{{patients|length}}</a></h4>
                 </div>
             </div>
         </div>
