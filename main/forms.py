@@ -4,6 +4,7 @@ from django import forms
 from main.models import Curriculum, TreatmentPlan
 
 
+
 class CurriculumForm(forms.ModelForm):
     class Meta:
         model = Curriculum
@@ -23,4 +24,6 @@ class NewProfileForm(forms.ModelForm):
     class Meta:
         model = PatientProfile
         exclude = ['user']
+
+
 

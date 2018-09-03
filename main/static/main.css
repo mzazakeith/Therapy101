@@ -1,0 +1,9 @@
+/*Main CSS*/
+ /* Split the screen in half */
+
+body {
+    height: 100%;
+}
+#curriculum {
+    background-image: url("/assets/hands.jpg");
+}

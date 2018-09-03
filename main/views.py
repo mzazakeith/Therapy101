@@ -8,6 +8,8 @@ from main.serializers import CurriculumSerializer, TreatmentPlanSerializer, Pati
     AssistantProfileSerializer
 
 
+
+
 def curriculum_upload(request):
     if request.method == 'POST':
         form = CurriculumForm(request.POST, request.FILES)
@@ -48,6 +50,15 @@ def new_profile(request):
 def welcome(request):
     title = "welcome"
     return render(request, 'welcome.html', locals())
+
+def home(request):
+    title = "welcome"
+    return render(request, 'home.html', locals())
+
+
+def slta(request):
+    title = "slta"
+    return render(request, 'slta.html', locals())
 
 
 class CurriculumList(APIView):
