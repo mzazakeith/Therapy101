@@ -1,0 +1,36 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block content %}
+    {{ block.super}}
+    <div class="container">
+        <div class="curriculums">
+
+            <!-- patient list -->
+            <table>
+                <tr>
+                    <th>PATIENT</th>
+                    <th>ETIOLOGY</th>
+                    <th>BIO</th>
+                    <th>SLTA</th>
+
+                </tr>
+                {% for patient in patients %}
+                    <tr>
+                        <td><a style="color: white; " href="{% url 'patient' ownerpatient=patient.id %}" >{{ patient.patient.username|capfirst }}</a></td>
+                        <td>{{ patient.etiology }}</td>
+                        <td>{{ patient.bio }}</td>
+                        <td>{{ patient.slta.user.username }}</td>
+                    </tr>
+                {% endfor %}
+
+            </table>
+
+
+        </div>
+    </div>
+
+
+
+
+
+{% endblock %}

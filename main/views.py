@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from main.forms import CurriculumForm, TreatmentPlanForm, NewProfileForm
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from main.models import Curriculum, TreatmentPlan, PatientProfile, AssistantProfile
+from main.models import Curriculum, TreatmentPlan, PatientProfile, AssistantProfile, SLTASpot
 from main.serializers import CurriculumSerializer, TreatmentPlanSerializer, PatientProfileSerializer, \
     AssistantProfileSerializer
 
@@ -49,6 +49,7 @@ def new_profile(request):
 
 def welcome(request):
     title = "welcome"
+    locations = SLTASpot.objects.all()
     return render(request, 'welcome.html', locals())
 
 def home(request):
@@ -139,3 +140,59 @@ class AssistantProfileDetail(APIView):
         assistantprofile = self.get_object(pk)
         serializer = AssistantProfileSerializer(assistantprofile)
         return Response(serializer.data)
+
+
+def therapist_dash(request):
+    locations = SLTASpot.objects.all()
+    return render(request, 'therapistdash/therapist-dash.html', locals())
+
+
+def patient(request, ownerpatient):
+    patient = PatientProfile.objects.get(id=ownerpatient)
+    import datetime
+    age = int((datetime.date.today() - patient.birthday).days / 365.25)
+    return render(request, 'therapistdash/patient.html', locals())
+
+
+def curriculumlist(request):
+    current_user = request.user
+    if current_user.is_slt:
+        curriculums = Curriculum.objects.all()
+    else:
+        curriculums = Curriculum.objects.filter(doctor=current_user)
+    return render(request, 'therapistdash/curriculums.html', locals())
+
+
+def planlist(request):
+    return render(request, 'therapistdash/planlist.html')
+
+
+def assistantlist(request):
+    return render(request, 'therapistdash/assistantlist.html')
+
+
+def patientlist(request):
+    current_user = request.user
+    if current_user.is_slt:
+        patients = PatientProfile.objects.filter(slt=current_user)
+    else:
+        profile = AssistantProfile.objects.get(user=current_user)
+        patients = PatientProfile.objects.filter(slta=profile)
+    return render(request, 'therapistdash/patientlist.html', locals())
+
+
+def assistant_dash(request):
+    return render(request, 'therapistdash/assistantdash.html')
+
+
+def assistant(request, user_id):
+    assistant = AssistantProfile.objects.get(user=user_id)
+    profile = AssistantProfile.objects.get(user=user_id)
+    patients = PatientProfile.objects.filter(slta=profile)
+    return render(request, 'therapistdash/assistant.html', locals())
+
+
+def assistantpatients(request, user_id):
+    profile = AssistantProfile.objects.get(user=user_id)
+    patients = PatientProfile.objects.filter(slta=profile)
+    return render(request, 'therapistdash/assistantspatients.html', locals())

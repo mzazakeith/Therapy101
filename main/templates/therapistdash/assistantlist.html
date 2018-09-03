@@ -1,0 +1,22 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block content %} 
+{{ block.super}}
+<div class="container">
+        <div class="curriculums">
+            <div class="w3-card-4">
+                <img src="{{assistantprofile.profile_photo.url}}" >
+                <div class="w3-container w3-center">
+                    <p><strong>Name:</strong> {{assistant.name}}</p>
+                    <p><strong>Location:</strong>{{assistant.location}}</p>
+                    <p><strong>Patients:</strong>{{assistant.patients}}</p>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+
+
+
+{% endblock %}

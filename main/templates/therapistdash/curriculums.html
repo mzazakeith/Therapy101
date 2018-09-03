@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block content %}
+    {{ block.super}}
+    <div class="container">
+        <div class="curriculums">
+
+            <!-- curriculums list -->
+            <table>
+                <tr>
+                    <th>DATE-TIME</th>
+                    <th>PATIENT</th>
+                    <th>DESCRIPTION</th>
+                    <th>FILE</th>
+
+                </tr>
+                {% for curriculum in curriculums %}
+                    <tr>
+                        <td>{{ curriculum.uploaded_at }}</td>
+                        <td>{{ curriculum.patient.username }}</td>
+                        <td>{{ curriculum.description }}</td>
+                        <td><button>Download File</button></td>
+
+                    </tr>
+                {% endfor %}
+
+            </table>
+
+
+        </div>
+    </div>
+
+
+
+
+
+{% endblock %}
