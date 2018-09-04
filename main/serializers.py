@@ -17,7 +17,7 @@ class TreatmentPlanSerializer(serializers.ModelSerializer):
 class PatientProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = PatientProfile
-        exclude = ['user']
+        exclude = ['patient']
 
 
 class AssistantProfileSerializer(serializers.ModelSerializer):
