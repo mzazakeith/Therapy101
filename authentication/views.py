@@ -46,3 +46,5 @@ def parent_signup(request):
     else:
         form = ParentSignupForm()
     return render(request, 'registration/parent_signup.html', {'form': form})
+
+

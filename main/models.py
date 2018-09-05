@@ -51,4 +51,4 @@ class SLTASpot(models.Model):
 
     @property
     def popupContent(self):
-        return '<a href={}/{}><p>{}</p></a>'.format("userprofile", self.user.id, self.user.username)
+        return '<a href={}/{}><p>{}</p></a>'.format("/slta", self.user.id, self.user.username)

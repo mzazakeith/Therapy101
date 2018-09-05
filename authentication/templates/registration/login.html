@@ -1,42 +1,177 @@
 {%extends "registration/base.html"%}
 {% load bootstrap4 %}
+{% load static %}
+
 
 {% block content %}
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-7">
-
+    <div class="container-fluid h-100" id="all">
+        <div class="row h-100">
+            <div class="col-sm-6 col-2 h-100  text-white py-2 d-flex align-items-center justify-content-center fixed-top" id="left">
+                <img src="{% static 'assets/SEMA.png' %}">
             </div>
+            <div class="col offset-2 offset-sm-6 py-2">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12 login">
 
-            <div class="col-md-5 login">
+                            <div class="card card-default" id="card">
 
-                <div class="card card-default">
+                                <div class="card-heading">
+                                    <h1 class="sign"><strong> &nbsp; LOGIN</strong></h1>
+                                </div>
 
-                    <div class="card-heading">
-                        <h1 class="text-left login-text"><strong> &nbsp; Sign In</strong></h1>
-                    </div>
-                    <div class="card-body">
+                                <div class="card-body">
 
-                        <form  action="/accounts/login/" method="post">
-                            {% csrf_token %}
-                            {% bootstrap_form form%}
+                                    <form  action="/accounts/login/" method="post">
+                                        {% csrf_token %}
+                                        {% bootstrap_form form%}
 
-                            <div class="form-group">
-                                <input type="submit" class="ui button" value="Login">
+                                        <div class="form-group">
+                                            <input type="submit"  class="btn btn-block" value="Login" id="log">
+                                        </div>
+
+                                        <input type="hidden" name="next" value="/home">
+
+                                    </form>
+
+                                    <div class="row" id="break">
+                                        <hr>
+                                        <div class="col-md-12">
+                                            <h1 class="sign" ><strong> SIGN UP</strong></h1>
+                                            <br>
+                                            <div>
+                                                <button class=" btn btn-block " id="up1">SLT</button> <br>
+                                            </div>
+                                            <div>
+                                                <button class="btn btn-block " id="up2">SLTA</button> <br>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
                             </div>
 
-                            <input type="hidden" name="next" value="/home">
-
-                        </form>
+                        </div>
 
                     </div>
-
                 </div>
 
             </div>
         </div>
     </div>
+
+    <style>
+        .container-fluid {
+            background-color: chocolate;
+
+
+        }
+        .login {
+
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+
+        }
+
+        .card-default {
+
+            padding: 60px 60px 60px 60px;
+
+            background-color: rgba(245, 245, 245, 1);
+            opacity: .6;
+            font-size: larger;
+            font-family: FontAwesome;
+            font-weight: bolder;
+            height: 100%;
+            margin: 30px 30px 30px 30px;
+
+        }
+
+        .card-default {
+            opacity: .8;
+            font-size: larger;
+            font-family: FontAwesome;
+            /*font-weight: bolder;*/
+            margin-bottom: 20px ;
+
+        }
+
+        .sign {
+            background-color: whitesmoke;
+            opacity: 1;
+            font-family: FontAwesome;
+            text-underline: black;
+            text-align: center;
+            border-bottom: 5px solid #F4C127;
+            text-align: center;
+        }
+
+        #log{
+            background-color: #F4C127;
+            position: center;
+            align-content: center;
+            align-self: center;
+            align-items: center;
+            alignment: center;
+
+        }
+
+        #left {
+            background-color: chocolate;
+        }
+        #up1 {
+            background-color: #F4C127;
+            position: center;
+            align-content: center;
+            align-self: center;
+            align-items: center;
+            alignment: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        #up2 {
+            background-color: #F4C127;
+            position: center;
+            align-content: center;
+            align-self: center;
+            align-items: center;
+            alignment: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+
+    #break {
+        margin-top: 50px;
+    }
+    #card {
+        margin-bottom: 40px;
+    }
+    body {
+        background-color: chocolate;
+    }
+
+
+
+
+    </style>
+
 
 
 {% endblock %}

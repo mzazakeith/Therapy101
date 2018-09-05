@@ -4,6 +4,7 @@ from main.models import Curriculum, TreatmentPlan, SLTASpot
 from leaflet.forms.fields import PointField
 
 
+
 class CurriculumForm(forms.ModelForm):
     class Meta:
         model = Curriculum
@@ -23,3 +24,4 @@ class NewProfileForm(forms.ModelForm):
     class Meta:
         model = PatientProfile
         exclude = ['user']
+
