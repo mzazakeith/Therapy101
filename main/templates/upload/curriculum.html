@@ -1,7 +1,64 @@
 {% extends 'base.html' %}
 {% load bootstrap4 %}
+{% load static %}
+
 
 {% block content %}
+<<<<<<< HEAD
+
+    <div class="container-fluid" id="curriculum" >
+        <div class="jumbotron">
+            <h1>UPLOAD CURRICULUM</h1>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <form method="post" enctype="multipart/form-data" id="form">
+                    {% csrf_token %}
+                    {%   bootstrap_form form %}
+                    <button class="btn  btn-warning" type="submit">UPLOAD</button>
+                </form>
+            </div>
+            <div class="row" id="return">
+            <button class="btn btn-warning" type="submit" > RETURN</button>
+
+
+        </div>
+
+
+
+        <style>
+            h1 {
+                text-align: center;
+
+
+            }
+            .container-fluid {
+                background-color: whitesmoke;
+                margin-bottom: 0px;
+                background-image: url("{% static 'assets/hands.jpg' %}");
+                margin: 0px 0px 0px 0px;
+                height: 100%;
+                align-self: center;
+                align-content: center;
+
+
+            }
+            #form {
+                padding: 100px 50px 100px 50px;
+            }
+            #return {
+                float: right;
+            }
+            button {
+                background-color: #F4C127;;
+            }
+
+
+        </style>
+
+
+=======
 {#    <form method="post" enctype="multipart/form-data">#}
 {#        {% csrf_token %}#}
 {#        {%   bootstrap_form form %}#}
@@ -53,4 +110,5 @@
             </style>
 
 
+>>>>>>> 5ecbb26a79e00f49a7f5bb3ce6e497074f8a3264
 {% endblock %}

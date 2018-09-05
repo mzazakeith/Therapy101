@@ -17,7 +17,10 @@ urlpatterns = [
     url(r'^assistantss/$', views.assistantlist, name='assistants'),
     url(r'^upload/curriculum/$', views.curriculum_upload, name='upload-curriculum'),
     url(r'^upload/treatment/$', views.treatment_upload, name='upload-treatment'),
-    url(r'^$', views.welcome, name='welcome'),
+    url(r'^welcome$', views.welcome, name='welcome'),
+    url(r'^$', views.home, name='home'),
+
+    url(r'^slta/$', views.slta, name='slta'),
     url(r'^new/profile$', views.new_profile, name='new-profile'),
     url(r'^curriculums/$', views.CurriculumList.as_view()),
     url(r'^curriculums/(?P<pk>[0-9]+)/$', views.CurriculumDetail.as_view()),
