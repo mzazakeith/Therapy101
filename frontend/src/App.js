@@ -1,33 +1,24 @@
 import React, { Component } from 'react';
-import Therapist from './Components/Therapist.js';
-import Patient from './Components/Patient.js';
-
-// import './App.css';
+// import { BrowserRouter as Router } from 'react-router-dom';
+import './App.css';
+import 'antd/dist/antd.css';
+import Layout from './containers/Layout';
+// import PatientList from './containers/PatientList';
+// import BaseRouter from './routes';
+// import Dashboard from './containers/Layout';
+import Curriculum from './components/Curriculum';
 
 class App extends Component {
- state = {
-    todos: []
-    };
-    async componentDidMount() {
-    try {
-      const res = await fetch('http://127.0.0.1:8000/curriculums/');
-      const todos = await res.json();
-      this.setState({
-        todos
-      });
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
   render() {
     return (
-       <div>
-        {this.state.todos.map(item => (
-          <div key={item.id}>
-            <span>{item.description}</span>
-          </div>
-        ))}
+      <div className="App">
+      {/* <Router> */}
+        
+        {/* <Layout/> */}
+            <Curriculum/>
+          {/* <PatientList/> */}
+      {/* </Router> */}
+        
       </div>
     );
   }
