@@ -24,9 +24,4 @@ class NewProfileForm(forms.ModelForm):
     class Meta:
         model = PatientProfile
         exclude = ['user']
-<<<<<<< HEAD
 
-
-
-=======
->>>>>>> 5ecbb26a79e00f49a7f5bb3ce6e497074f8a3264
