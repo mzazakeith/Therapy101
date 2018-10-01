@@ -95,25 +95,25 @@ WSGI_APPLICATION = 'therapy.wsgi.application'
 # }
 
 # mzaza
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'therapytest',
-        'USER': 'mzaza',
-        'PASSWORD': 'password',
-    }
-}
-# end mzaza
-
-# zawadi
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
 #         'NAME': 'therapytest',
-#         'USER': 'ashley',
-#         'PASSWORD': 'sherlocked',
+#         'USER': 'mzaza',
+#         'PASSWORD': 'password',
 #     }
 # }
+# end mzaza
+
+# zawadi
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'therapytest',
+        'USER': 'ashley',
+        'PASSWORD': 'sherlocked',
+    }
+}
 # endzawadi
 
 
